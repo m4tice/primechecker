@@ -4,7 +4,7 @@
 
 import pandas as pd
 
-from utils.utils import get_account_numbers_by_id, get_account_numbers_by_sample
+from utils.util import get_account_numbers_by_id, get_account_numbers_by_sample
 from utils.settings import RQONE_FILE_PATH
 
 

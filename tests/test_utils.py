@@ -3,8 +3,8 @@
 
 import pandas as pd
 
-from src.utils.utils import get_none
-from src.utils.utils import get_account_numbers_by_id
+from utils.util import get_none
+from utils.util import get_account_numbers_by_id
 # from src.utils.utils import get_account_numbers_by_sample
 
 
