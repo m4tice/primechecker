@@ -1,3 +1,4 @@
+# pylint: skip-file
 """Sandbox for testing. Should be deleted when released officially"""
 
 
