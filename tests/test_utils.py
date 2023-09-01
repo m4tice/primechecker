@@ -38,3 +38,6 @@ def test_get_account_numbers_by_sample():
     Expectation: function is able to filter BM numbers
     from input of data frame using sample input string
     """
+
+
+test_get_account_numbers_by_id()
