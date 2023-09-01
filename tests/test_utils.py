@@ -6,6 +6,11 @@ from src.utils.utils import get_none
 from src.utils.utils import get_account_numbers_by_id
 from src.utils.utils import get_account_numbers_by_sample
 
+from tests.test_settings import TEST_FILE_PATH
+
+
+test_data = pd.read_excel(TEST_FILE_PATH)
+
 
 def test_get_none():
     """
