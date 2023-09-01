@@ -18,5 +18,3 @@ rqone_data = rqone_data.set_index("id")
 
 accountnumbers = get_account_numbers_by_id(rqone_data, TEST_BM_NUMBER_EXTRACT_RQ1ID_03)
 print(accountnumbers)
-
-# some comments
