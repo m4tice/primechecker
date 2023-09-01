@@ -1,6 +1,9 @@
 # Introduction  
-This Git repo serves as a template for a newly started Python Project  
-Compatible Python version:  
+Tracking tool for Prime task logging activity.  
+Cloned from template project: https://github.com/m4tice/py-prj-tmpl  
+
+
+**Compatible Python version**  
 * 3.8  
 * 3.9  
 * 3.10  
