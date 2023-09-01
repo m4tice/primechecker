@@ -81,7 +81,5 @@ master_data_df = pd.DataFrame(master_data,
                                        "TotalWork",
                                        "ActualWork",
                                        "RemainWork"])
-        # return id, title, life_cycle_state, submitter, submit_date, account_numbers, \
-        #     estimated_effort, estimated_effort, allocation, category, assignee
 
 master_data_df.to_csv("./_out/master_data.csv")
