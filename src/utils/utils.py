@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN
+from utils.settings import KEYWORD_BM, BM_NUMBER_LEN
 
 
 def get_none():
