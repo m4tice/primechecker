@@ -4,13 +4,7 @@ import os
 import pandas as pd
 
 from utils.settings import PRIME_FILE_PATH, RQONE_FILE_PATH
-from utils.util import get_account_numbers_by_id,\
-    clean_prime_data,\
-        unzip_prime_datarow,\
-            unzip_rqone_datarow,\
-                rq1id_exist,\
-                    is_rq1id_duplicated,\
-                        load_rqone_data
+from utils.util import clean_prime_data, unzip_rqone_datarow, rq1id_exist, is_rq1id_duplicated
 
 
 def create_master_data():
@@ -28,7 +22,7 @@ def create_master_data():
         cleaned_prime_data_df = clean_prime_data(prime_data)
 
         # initialize empty list
-        master_data = []
+        master_data_list = []
 
         for _, row in rqone_data.iterrows():
             # id, title, life_cycle_state, submitter, submit_date, \
@@ -36,9 +30,9 @@ def create_master_data():
             #         allocation, category, assignee = unzip_rqone_datarow(row)
             # try:
             rqone_datarow = list(unzip_rqone_datarow(row))
-            id = str(rqone_datarow[0])
+            rqoneid = str(rqone_datarow[0])
 
-            rq1d_exist_in_prime = rq1id_exist(cleaned_prime_data_df, id)
+            rq1d_exist_in_prime = rq1id_exist(cleaned_prime_data_df, rqoneid)
 
             prime_total_work = "-"
             prime_actual_work = "-"
@@ -46,24 +40,24 @@ def create_master_data():
 
             if rq1d_exist_in_prime:
 
-                rq1id_duplicated_in_prime = is_rq1id_duplicated(cleaned_prime_data_df, id)
+                rq1id_duplicated_in_prime = is_rq1id_duplicated(cleaned_prime_data_df, rqoneid)
 
                 if rq1id_duplicated_in_prime:
-                    prime_total_work = cleaned_prime_data_df.loc[id].iloc[-1]["TotalWork"]
-                    prime_actual_work = cleaned_prime_data_df.loc[id].iloc[-1]["ActualWork"]
-                    prime_remain_work = cleaned_prime_data_df.loc[id].iloc[-1]["RemainWork"]
+                    prime_total_work = cleaned_prime_data_df.loc[rqoneid].iloc[-1]["TotalWork"]
+                    prime_actual_work = cleaned_prime_data_df.loc[rqoneid].iloc[-1]["ActualWork"]
+                    prime_remain_work = cleaned_prime_data_df.loc[rqoneid].iloc[-1]["RemainWork"]
 
                 else:
-                    prime_total_work = cleaned_prime_data_df.loc[id]["TotalWork"]
-                    prime_actual_work = cleaned_prime_data_df.loc[id]["ActualWork"]
-                    prime_remain_work = cleaned_prime_data_df.loc[id]["RemainWork"]
+                    prime_total_work = cleaned_prime_data_df.loc[rqoneid]["TotalWork"]
+                    prime_actual_work = cleaned_prime_data_df.loc[rqoneid]["ActualWork"]
+                    prime_remain_work = cleaned_prime_data_df.loc[rqoneid]["RemainWork"]
 
 
             # finally:
             rqone_datarow.extend([prime_total_work, prime_actual_work, prime_remain_work])
-            master_data.append(rqone_datarow)
+            master_data_list.append(rqone_datarow)
 
-    return master_data
+    return master_data_list
 
 
 master_data = create_master_data()
