@@ -3,8 +3,8 @@
 
 import pandas as pd
 
-from utils.util import get_none
-from utils.util import get_account_numbers_by_id
+from utils.utils import get_none
+from utils.utils import get_account_numbers_by_id
 # from src.utils.utils import get_account_numbers_by_sample
 
 
@@ -33,6 +33,7 @@ def test_get_account_numbers_by_id():
     assert get_account_numbers_by_id(test_data, TEST_BM_NUMBER_EXTRACT_RQ1ID_01) == TEST_BM_NUMBER_EXTRACT_RESULT_01
     assert get_account_numbers_by_id(test_data, TEST_BM_NUMBER_EXTRACT_RQ1ID_02) == TEST_BM_NUMBER_EXTRACT_RESULT_02
     assert get_account_numbers_by_id(test_data, TEST_BM_NUMBER_EXTRACT_RQ1ID_03) == TEST_BM_NUMBER_EXTRACT_RESULT_03
+    # print(get_account_numbers_by_id(test_data, TEST_BM_NUMBER_EXTRACT_RQ1ID_01))
 
 
 def test_get_account_numbers_by_sample():
@@ -40,3 +41,6 @@ def test_get_account_numbers_by_sample():
     Expectation: function is able to filter BM numbers
     from input of data frame using sample input string
     """
+
+
+test_get_account_numbers_by_id()
