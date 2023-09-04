@@ -25,10 +25,7 @@ def create_master_data():
         master_data_list = []
 
         for _, row in rqone_data.iterrows():
-            # id, title, life_cycle_state, submitter, submit_date, \
-            #     account_numbers, estimated_effort,\
-            #         allocation, category, assignee = unzip_rqone_datarow(row)
-            # try:
+
             rqone_datarow = list(unzip_rqone_datarow(row))
             rqoneid = str(rqone_datarow[0])
 
