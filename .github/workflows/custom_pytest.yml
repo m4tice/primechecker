@@ -31,8 +31,9 @@ jobs:
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
     
     - name: Analysing the code with pylint
-      working-directory: ./
       run: |
+        echo ${{ github.workspace }}
+        echo $GITHUB_WORKSPACE
         pylint ./**/*.py
 
     - name: Unit Test with Pytest
