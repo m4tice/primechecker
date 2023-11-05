@@ -7,6 +7,8 @@ from utils.settings import PRIME_FILE_PATH, RQONE_FILE_PATH
 from utils.util import clean_prime_data, unzip_rqone_datarow, rq1id_exist, is_rq1id_duplicated
 
 
+# TEST COMMENT
+
 def create_master_data():
     """create master data from prime and rq1 data"""
 
