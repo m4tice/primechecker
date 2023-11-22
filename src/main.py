@@ -27,7 +27,7 @@ def create_master_data():
         master_data_list = []
 
         for _, row in rqone_data.iterrows():
-
+            # print("=="*20)
             rqone_datarow = list(unzip_rqone_datarow(row))
             rqoneid = str(rqone_datarow[0])
 
@@ -41,6 +41,8 @@ def create_master_data():
 
                 rq1id_duplicated_in_prime = is_rq1id_duplicated(cleaned_prime_data_df, rqoneid)
 
+                # print("[DEBUG]:", rq1id_duplicated_in_prime, "\n", cleaned_prime_data_df.loc[rqoneid])
+
                 if rq1id_duplicated_in_prime:
                     prime_total_work = cleaned_prime_data_df.loc[rqoneid].iloc[-1]["TotalWork"]
                     prime_actual_work = cleaned_prime_data_df.loc[rqoneid].iloc[-1]["ActualWork"]
@@ -51,6 +53,7 @@ def create_master_data():
                     prime_actual_work = cleaned_prime_data_df.loc[rqoneid]["ActualWork"]
                     prime_remain_work = cleaned_prime_data_df.loc[rqoneid]["RemainWork"]
 
+                # print("[DEBUG]:effort:", prime_total_work, prime_actual_work, prime_remain_work)
 
             # finally:
             rqone_datarow.extend([prime_total_work, prime_actual_work, prime_remain_work])

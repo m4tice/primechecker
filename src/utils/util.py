@@ -2,8 +2,8 @@
 
 import pandas as pd
 
-from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work with GitHub Action Pytest
-# from utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work locally
+# from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work with GitHub Action Pytest
+from utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work locally
 
 
 def get_none():
@@ -98,7 +98,8 @@ def is_rq1id_duplicated(data_frame: pd.DataFrame, rq1id: str):
     """
     check if rq1 id is duplicated in dataframe
     """
-    return int(data_frame.index.value_counts(rq1id).loc[rq1id] * 100) > 1
+    print("[DEBUG]:count:", data_frame.index.value_counts(rq1id).loc[rq1id] * 100)
+    return data_frame.index.value_counts(rq1id).loc[rq1id] * 100 > 1
 
 
 def rq1id_exist(data_frame: pd.DataFrame, rq1id: str):
