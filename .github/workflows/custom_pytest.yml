@@ -31,7 +31,7 @@ jobs:
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
     
     - name: Analysing the code with pylint
-      working-directory: ./src/
+      # working-directory: ./src/
       run: |
         echo ${{ github.workspace }}
         echo $GITHUB_WORKSPACE
