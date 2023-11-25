@@ -2,8 +2,8 @@
 
 import pandas as pd
 
-# from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work with GitHub Action Pytest
-from utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work locally
+from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work with GitHub Action Pytest
+# from utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work locally
 
 
 def get_none():
