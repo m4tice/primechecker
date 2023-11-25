@@ -41,7 +41,8 @@ def create_master_data():
 
                 rq1id_duplicated_in_prime = is_rq1id_duplicated(cleaned_prime_data_df, rqoneid)
 
-                # print("[DEBUG]:", rq1id_duplicated_in_prime, "\n", cleaned_prime_data_df.loc[rqoneid])
+                # print("[DEBUG]:", rq1id_duplicated_in_prime,
+                # "\n", cleaned_prime_data_df.loc[rqoneid])
 
                 if rq1id_duplicated_in_prime:
                     prime_total_work = cleaned_prime_data_df.loc[rqoneid].iloc[-1]["TotalWork"]
