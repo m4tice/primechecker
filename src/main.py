@@ -80,3 +80,4 @@ master_data_df = pd.DataFrame(master_data,
                                        "RemainWork"])
 
 master_data_df.to_csv("./_out/master_data.csv")
+print("Successful operation!")

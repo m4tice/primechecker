@@ -1,8 +1,11 @@
 """Ultilities"""
 
+import sys
 import pandas as pd
 
-from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work with GitHub Action Pytest
+sys.path.append("")
+
+from src.utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work with GitHub Action Pytest  # pylint: disable=wrong-import-position
 # from utils.settings import KEYWORD_BM, BM_NUMBER_LEN  # work locally
 
 
@@ -98,7 +101,7 @@ def is_rq1id_duplicated(data_frame: pd.DataFrame, rq1id: str):
     """
     check if rq1 id is duplicated in dataframe
     """
-    print("[DEBUG]:count:", data_frame.index.value_counts(rq1id).loc[rq1id] * 100)
+    # print("[DEBUG]:count:", data_frame.index.value_counts(rq1id).loc[rq1id] * 100)
     return data_frame.index.value_counts(rq1id).loc[rq1id] * 100 > 1
 
 
