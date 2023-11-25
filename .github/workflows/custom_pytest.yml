@@ -36,7 +36,6 @@ jobs:
         echo ${{ github.workspace }}
         echo $GITHUB_WORKSPACE
         echo $GITHUB_WORKSPACE/src
-        # pylint $(git ls-files '*.py')
         pylint ./**/*.py
 
     - name: Unit Test with Pytest
